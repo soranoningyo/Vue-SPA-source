@@ -2,36 +2,7 @@
   <div>
     <!-- loader -->
     <transition name="slide-fade">
-      <div class="abso" v-if="!loaded">
-        <div class="lbody">
-          <div class="boxes">
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <loader :loading="loaded"/>
     </transition>
     <b-container>
       <b-row>
@@ -41,6 +12,7 @@
   </div>
 </template>
 <script>
+import loader from './../components/loader'
 import sportCard from './../components/sportCard'
 export default {
   created: function () {
@@ -70,6 +42,7 @@ export default {
     }
   },
   components: {
+    loader,
     sportCard
   }
 }

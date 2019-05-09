@@ -2,36 +2,7 @@
   <div>
     <!-- loader -->
     <transition name="slide-fade">
-      <div class="abso" v-if="!loaded">
-        <div class="lbody">
-          <div class="boxes">
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <loader :loading="loaded"/>
     </transition>
       <b-container>
         <b-row>
@@ -42,9 +13,11 @@
 </template>
 
 <script>
+import loader from './../components/loader'
 import NewsCard from './../components/NewsCard'
 export default {
   components: {
+    loader,
     NewsCard
   },
   created: function () {

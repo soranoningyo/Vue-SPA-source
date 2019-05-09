@@ -2,36 +2,7 @@
   <div>
     <!-- loader -->
     <transition name="slide-fade">
-      <div class="abso" v-if="!loaded">
-        <div class="lbody">
-          <div class="boxes">
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="box">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <loader :loading="loaded"/>
     </transition>
     <b-container>
         <b-row>
@@ -57,10 +28,12 @@
 </template>
 
 <script>
+import loader from './../components/loader'
 import HotNews from './../components/HotNews'
 export default {
   name: 'home',
   components: {
+    loader,
     HotNews
   },
   created: function () {
@@ -76,7 +49,6 @@ export default {
           if (!element.urlToImage) {
             element.urlToImage = 'https://dummyimage.com/400x300/777777/222222.png&text=No+Image+provided'
           }
-          console.log(element.urlToImage)
         })
       })
   },
